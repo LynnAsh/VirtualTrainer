@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Controller">
+   <children>
+      <BorderPane fx:id="mainWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+         <top>
+            <Pane fx:id="barPane" prefHeight="25.0" prefWidth="600.0" visible="false" BorderPane.alignment="CENTER">
+               <children>
+                  <MenuBar fx:id="menuBar" prefHeight="25.0" prefWidth="600.0">
+                    <menus>
+                      <Menu mnemonicParsing="false" text="File">
+                        <items>
+                              <MenuItem mnemonicParsing="false" text="Main Menu" />
+                              <MenuItem mnemonicParsing="false" onAction="#saveGame" text="Save" />
+                          <MenuItem fx:id="mainMenu" mnemonicParsing="false" onAction="#closeApp" text="Close" />
+                        </items>
+                      </Menu>
+                    </menus>
+                  </MenuBar>
+                  <Line endX="-65.66665649414062" endY="-26.000001907348633" layoutX="115.0" layoutY="51.0" startX="-65.66665649414062" startY="-51.0" />
+               </children>
+            </Pane>
+         </top>
+         <bottom>
+            <Pane BorderPane.alignment="CENTER">
+               <children>
+                  <Pane fx:id="menuBox" visible="false">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="600.0" spacing="25.0">
+                           <children>
+                              <Button fx:id="cosmeticsBt" mnemonicParsing="false" onAction="#cosmeticsPage" prefHeight="80.0" prefWidth="80.0" text="COSMETICS SHOP" textAlignment="CENTER" wrapText="true" />
+                              <Button fx:id="itemshopBt" mnemonicParsing="false" onMouseClicked="#itemshopShow" prefHeight="80.0" prefWidth="80.0" text="ITEM SHOP" textAlignment="CENTER" wrapText="true" />
+                              <Button fx:id="upgradesBt" mnemonicParsing="false" onAction="#upgradePage" prefHeight="80.0" prefWidth="80.0" text="UPGRADES" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="itemShop" prefHeight="100.0" prefWidth="600.0" visible="false">
+                     <children>
+                        <Text layoutX="119.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="More points per pet" />
+                        <Text layoutX="119.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 2x points for 200 clicks" />
+                        <Text layoutX="119.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="More points per pet 2" />
+                        <Text layoutX="119.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 5x points for 80 clicks" />
+                        <Button layoutX="380.0" layoutY="15.0" mnemonicParsing="false" onAction="#morePointsI" text="BUY" />
+                        <Button layoutX="380.0" layoutY="63.0" mnemonicParsing="false" onAction="#morePointsII" text="BUY" />
+                        <Line endX="3.999969482421875" endY="69.00003051757812" layoutX="300.0" layoutY="31.0" startX="3.999969482421875" startY="-30.999969482421875" />
+                        <Line endX="391.83331298828125" endY="-3.0517578125E-5" layoutX="106.0" layoutY="50.0" startX="-3.54046630859375" startY="-3.0517578125E-5" />
+                        <Text layoutX="266.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[1000]" />
+                        <Text layoutX="266.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[2000]" />
+                        <Line endX="-70.166748046875" endY="64.99996948242188" layoutX="172.0" layoutY="35.0" startX="-70.166748046875" startY="-35.000030517578125" />
+                        <Line endX="-80.33334350585938" endY="67.0" layoutX="579.0" layoutY="33.0" startX="-80.33334350585938" startY="-38.16668701171875" />
+                        <Button layoutX="27.0" layoutY="38.0" mnemonicParsing="false" onAction="#backButton" text="BACK" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="upgradeShop" prefHeight="100.0" prefWidth="600.0" visible="false">
+                     <children>
+                        <Line endX="-132.66668701171875" endY="72.0" layoutX="235.0" layoutY="28.0" startX="-132.66668701171875" startY="-25.0" />
+                        <Line endX="-132.66668701171875" endY="72.0" layoutX="630.0" layoutY="28.0" startX="-132.66668701171875" startY="-25.0" />
+                        <VBox alignment="CENTER" layoutX="100.0" layoutY="2.0" prefHeight="100.0" prefWidth="150.0" spacing="12.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="+1 Point per Click" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="+10 Point per Click" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="+100 Point per Click" />
+                           </children>
+                        </VBox>
+                        <Line endX="-132.66668701171875" endY="72.0" layoutX="430.0" layoutY="28.0" startX="-132.66668701171875" startY="-25.0" />
+                        <VBox alignment="CENTER" layoutX="320.0" layoutY="2.0" prefHeight="100.0" prefWidth="150.0" spacing="5.0">
+                           <children>
+                              <Button fx:id="plus1" mnemonicParsing="false" onAction="#ppc" text="BUY" />
+                              <Button fx:id="plus10" mnemonicParsing="false" onAction="#ppc" text="BUY" />
+                              <Button fx:id="plus100" mnemonicParsing="false" onAction="#ppc" text="BUY" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" layoutX="220.0" layoutY="3.0" prefHeight="100.0" prefWidth="100.0" spacing="12.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[600]" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[6000]" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[600000]" />
+                           </children>
+                        </VBox>
+                        <Button layoutX="31.0" layoutY="39.0" mnemonicParsing="false" onAction="#backButton" text="BACK" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="cosmeticsPage" prefHeight="100.0" prefWidth="600.0" visible="false">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="600.0" spacing="30.0">
+                           <children>
+                              <Button fx:id="piercingBt" mnemonicParsing="false" onAction="#setCosmetic" prefHeight="70.0" prefWidth="70.0" text="PIERCING [50000]" textAlignment="CENTER" wrapText="true" />
+                              <Button fx:id="bowBt" mnemonicParsing="false" onAction="#setCosmetic" prefHeight="70.0" prefWidth="70.0" text="BOW [200000]" textAlignment="CENTER" wrapText="true" />
+                              <Button fx:id="necklaceBt" mnemonicParsing="false" onAction="#setCosmetic" prefHeight="70.0" prefWidth="70.0" text=" NECKLACE [1000000]" textAlignment="CENTER" wrapText="true">
+                                 <font>
+                                    <Font size="11.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="crownBt" mnemonicParsing="false" onAction="#setCosmetic" prefHeight="70.0" prefWidth="70.0" text=" CROWN [10000000]" textAlignment="CENTER" wrapText="true" />
+                           </children>
+                        </HBox>
+                        <Button layoutX="30.0" layoutY="37.0" mnemonicParsing="false" onAction="#backButton" text="BACK" />
+                     </children></Pane>
+               </children>
+            </Pane>
+         </bottom>
+         <center>
+            <ImageView fx:id="panda" fitHeight="275.0" fitWidth="400.0" onMouseClicked="#pandaClick" visible="false">
+               <image>
+                  <Image url="@panda.png" />
+               </image>
+            </ImageView>
+         </center>
+      </BorderPane>
+      <Label fx:id="nameTag" layoutX="60.0" layoutY="4.0" />
+      <ImageView fx:id="borderImg" fitHeight="273.0" fitWidth="400.0" layoutX="100.0" layoutY="30.0" visible="false">
+         <image>
+            <Image url="@border.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="necklace" fitHeight="273.0" fitWidth="389.0" layoutX="100.0" layoutY="26.0" visible="false">
+         <image>
+            <Image url="@necklace.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="crown" fitHeight="144.0" fitWidth="200.0" layoutX="305.0" layoutY="-38.0" rotate="24.0" visible="false">
+         <image>
+            <Image url="@crown.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="bow" fitHeight="75.0" fitWidth="100.0" layoutX="203.0" layoutY="78.0" rotate="-35.2" visible="false">
+         <image>
+            <Image url="@bow.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="piercing" fitHeight="63.0" fitWidth="56.0" layoutX="163.0" layoutY="59.0" rotate="37.1" visible="false">
+         <image>
+            <Image url="@piercing.png" />
+         </image>
+      </ImageView>
+      <Pane fx:id="pointsPane" layoutY="234.0" prefHeight="63.0" prefWidth="100.0" visible="false">
+         <children>
+            <Label fx:id="pointsLabel" layoutY="22.0" text="Points = 0">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label fx:id="ppcLabel" layoutY="40.0" text="Points Per Click = 1">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="startPage" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Text fill="WHITE" layoutX="169.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Virtual Trainer" wrappingWidth="250.0">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+               <effect>
+                  <DropShadow blurType="ONE_PASS_BOX" height="27.81" radius="13.1625" spread="1.0" width="26.84" />
+               </effect>
+            </Text>
+            <VBox alignment="CENTER" layoutX="250.0" layoutY="205.0" prefHeight="206.0" prefWidth="100.0" spacing="15.0">
+               <children>
+                  <TextField fx:id="petName" promptText="Enter pet name" visible="false" />
+                  <Button mnemonicParsing="false" onMouseClicked="#startClick" text="Start" />
+                  <Button mnemonicParsing="false" onAction="#continueGame" text="Continue" />
+                  <Button mnemonicParsing="false" onAction="#closeApp" text="Quit" />
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</Pane>
