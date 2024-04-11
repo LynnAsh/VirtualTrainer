@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Controller">
+<Pane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: slategray;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.Controller">
    <children>
       <BorderPane fx:id="mainWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
          <top>
@@ -27,7 +27,6 @@
                     <menus>
                       <Menu mnemonicParsing="false" text="File">
                         <items>
-                              <MenuItem mnemonicParsing="false" text="Main Menu" />
                               <MenuItem mnemonicParsing="false" onAction="#saveGame" text="Save" />
                           <MenuItem fx:id="mainMenu" mnemonicParsing="false" onAction="#closeApp" text="Close" />
                         </items>
@@ -54,16 +53,16 @@
                   </Pane>
                   <Pane fx:id="itemShop" prefHeight="100.0" prefWidth="600.0" visible="false">
                      <children>
-                        <Text layoutX="119.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="More points per pet" />
-                        <Text layoutX="119.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 2x points for 200 clicks" />
-                        <Text layoutX="119.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="More points per pet 2" />
-                        <Text layoutX="119.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 5x points for 80 clicks" />
+                        <Text fill="WHITE" layoutX="119.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="More points per pet" />
+                        <Text fill="WHITE" layoutX="119.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 2x points for 200 clicks" />
+                        <Text fill="WHITE" layoutX="119.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="More points per pet 2" />
+                        <Text fill="WHITE" layoutX="119.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 5x points for 80 clicks" />
                         <Button layoutX="380.0" layoutY="15.0" mnemonicParsing="false" onAction="#morePointsI" text="BUY" />
                         <Button layoutX="380.0" layoutY="63.0" mnemonicParsing="false" onAction="#morePointsII" text="BUY" />
                         <Line endX="3.999969482421875" endY="69.00003051757812" layoutX="300.0" layoutY="31.0" startX="3.999969482421875" startY="-30.999969482421875" />
                         <Line endX="391.83331298828125" endY="-3.0517578125E-5" layoutX="106.0" layoutY="50.0" startX="-3.54046630859375" startY="-3.0517578125E-5" />
-                        <Text layoutX="266.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[1000]" />
-                        <Text layoutX="266.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[2000]" />
+                        <Text fill="WHITE" layoutX="266.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[1000]" />
+                        <Text fill="WHITE" layoutX="266.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="[2000]" />
                         <Line endX="-70.166748046875" endY="64.99996948242188" layoutX="172.0" layoutY="35.0" startX="-70.166748046875" startY="-35.000030517578125" />
                         <Line endX="-80.33334350585938" endY="67.0" layoutX="579.0" layoutY="33.0" startX="-80.33334350585938" startY="-38.16668701171875" />
                         <Button layoutX="27.0" layoutY="38.0" mnemonicParsing="false" onAction="#backButton" text="BACK" />
@@ -75,9 +74,9 @@
                         <Line endX="-132.66668701171875" endY="72.0" layoutX="630.0" layoutY="28.0" startX="-132.66668701171875" startY="-25.0" />
                         <VBox alignment="CENTER" layoutX="100.0" layoutY="2.0" prefHeight="100.0" prefWidth="150.0" spacing="12.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="+1 Point per Click" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="+10 Point per Click" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="+100 Point per Click" />
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="+1 Point per Click" />
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="+10 Point per Click" />
+                              <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="+100 Point per Click" />
                            </children>
                         </VBox>
                         <Line endX="-132.66668701171875" endY="72.0" layoutX="430.0" layoutY="28.0" startX="-132.66668701171875" startY="-25.0" />
@@ -90,9 +89,9 @@
                         </VBox>
                         <VBox alignment="CENTER" layoutX="220.0" layoutY="3.0" prefHeight="100.0" prefWidth="100.0" spacing="12.0">
                            <children>
-                              <Text fx:id="price1x" strokeType="OUTSIDE" strokeWidth="0.0" text="[600]" />
-                              <Text fx:id="price10x" strokeType="OUTSIDE" strokeWidth="0.0" text="[6000]" />
-                              <Text fx:id="price100x" strokeType="OUTSIDE" strokeWidth="0.0" text="[600000]" />
+                              <Text fx:id="price1x" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="[600]" />
+                              <Text fx:id="price10x" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="[6000]" />
+                              <Text fx:id="price100x" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="[600000]" />
                            </children>
                         </VBox>
                         <Button layoutX="31.0" layoutY="39.0" mnemonicParsing="false" onAction="#backButton" text="BACK" />
@@ -153,19 +152,19 @@
       </ImageView>
       <Pane fx:id="pointsPane" layoutY="234.0" prefHeight="63.0" prefWidth="100.0" visible="false">
          <children>
-            <Label fx:id="pointsLabel" layoutY="22.0" text="Points = 0">
+            <Label fx:id="pointsLabel" layoutY="22.0" text="Points = 0" textFill="WHITE">
                <font>
                   <Font size="10.0" />
                </font>
             </Label>
-            <Label fx:id="ppcLabel" layoutY="40.0" text="Points Per Click = 1">
+            <Label fx:id="ppcLabel" layoutY="40.0" text="Points Per Click = 1" textFill="WHITE">
                <font>
                   <Font size="10.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <Pane fx:id="startPage" prefHeight="400.0" prefWidth="600.0">
+      <Pane fx:id="startPage" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: slategray;">
          <children>
             <Text fill="WHITE" layoutX="169.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Virtual Trainer" wrappingWidth="250.0">
                <font>
