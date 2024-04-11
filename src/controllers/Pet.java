@@ -4,6 +4,7 @@ public class Pet {
     private String name;
     private int points = 0;
     private int ppc = 1;
+    private int priceppc = 600;
 
     private int mppc1 = 0;
     private int mppc2 = 0;
@@ -79,6 +80,15 @@ public class Pet {
 
     public void setppc(int add) {
         ppc += add;
+        priceppc += (priceppc / 4);
+    }
+
+    public void setPrice(int price) {
+        priceppc = price;
+    }
+
+    public int getPrice() {
+        return priceppc;
     }
 
     public int getppc() {

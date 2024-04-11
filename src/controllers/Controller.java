@@ -16,6 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 
 public class Controller {
     private String name;
@@ -51,6 +52,10 @@ public class Controller {
     @FXML private Label pointsLabel;
     @FXML private Label ppcLabel;
     @FXML private Label nameTag;
+    @FXML private Text price1x;
+    @FXML private Text price10x;
+    @FXML private Text price100x;
+
 
     public void startClick(MouseEvent event) {
         name = petName.getText();
@@ -111,6 +116,13 @@ public class Controller {
     public void upgradePage(ActionEvent event) {
         menuBox.setVisible(false);
         upgradeShop.setVisible(true);
+        updatePriceTxt();
+    }
+
+    private void updatePriceTxt() {
+        price1x.setText("[" + pet.getPrice() + "]");
+        price10x.setText("[" + pet.getPrice() * 10 + "]");
+        price100x.setText("[" + pet.getPrice() * 100 + "]");
     }
 
     public void cosmeticsPage(ActionEvent event) {
@@ -159,18 +171,19 @@ public class Controller {
     }
 
     public void ppc(ActionEvent event) {
-        if (event.getSource() == plus1 && pet.getPoints() >= 600) {
+        if (event.getSource() == plus1 && pet.getPoints() >= pet.getPrice()) {
+            pet.setPoints(-pet.getPrice());
             pet.setppc(1);
-            pet.setPoints(-600);
-        } else if (event.getSource() == plus10 && pet.getPoints() >= 6000) {
+        } else if (event.getSource() == plus10 && pet.getPoints() >= pet.getPrice() * 10) {
+            pet.setPoints(-pet.getPrice() * 10);
             pet.setppc(10);
-            pet.setPoints(-6000);
-        } else if (event.getSource() == plus100 && pet.getPoints() >= 600000) {
+        } else if (event.getSource() == plus100 && pet.getPoints() >= pet.getPrice() * 100) {
+            pet.setPoints(-pet.getPrice() * 100);
             pet.setppc(100);
-            pet.setPoints(-600000);
         }
 
         updateLabels();
+        updatePriceTxt();
     }
 
     public void morePointsI(ActionEvent event) {
@@ -195,14 +208,15 @@ public class Controller {
          * String (hasBow)
          * String (hasNecklace)
          * String (hasCrown)
+         * int (priceppc)
          */
 
         try {
             File file = new File("savegame.txt");
             FileWriter writer = new FileWriter(file);
             PrintWriter pw = new PrintWriter(writer);
-            pw.printf("%s %d %d %d %d %b %b %b %b".formatted(pet.getName(), pet.getPoints(), pet.getppc(), pet.getmppc1(), pet.getmppc2(),
-                        pet.getCosmetic("piercing"), pet.getCosmetic("bow"), pet.getCosmetic("necklace"), pet.getCosmetic("crown")));
+            pw.printf("%s %d %d %d %d %b %b %b %b %d".formatted(pet.getName(), pet.getPoints(), pet.getppc(), pet.getmppc1(), pet.getmppc2(),
+                        pet.getCosmetic("piercing"), pet.getCosmetic("bow"), pet.getCosmetic("necklace"), pet.getCosmetic("crown"), pet.getPrice()));
             pw.close();
 
         } catch (IOException e) {
@@ -236,6 +250,7 @@ public class Controller {
         boolean hasBow = Boolean.parseBoolean(data[6]);
         boolean hasNecklace = Boolean.parseBoolean(data[7]);
         boolean hasCrown = Boolean.parseBoolean(data[8]);
+        pet.setPrice(Integer.parseInt(data[9]));
 
         if (hasPiercing) {
             piercing();

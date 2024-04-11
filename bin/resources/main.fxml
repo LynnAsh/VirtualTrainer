@@ -90,9 +90,9 @@
                         </VBox>
                         <VBox alignment="CENTER" layoutX="220.0" layoutY="3.0" prefHeight="100.0" prefWidth="100.0" spacing="12.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[600]" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[6000]" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="[600000]" />
+                              <Text fx:id="price1x" strokeType="OUTSIDE" strokeWidth="0.0" text="[600]" />
+                              <Text fx:id="price10x" strokeType="OUTSIDE" strokeWidth="0.0" text="[6000]" />
+                              <Text fx:id="price100x" strokeType="OUTSIDE" strokeWidth="0.0" text="[600000]" />
                            </children>
                         </VBox>
                         <Button layoutX="31.0" layoutY="39.0" mnemonicParsing="false" onAction="#backButton" text="BACK" />
